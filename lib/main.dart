@@ -25,26 +25,44 @@ class CustomContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(16.0), // Anpassen der Innenabstände des Containers
+      padding: const EdgeInsets.all(16.0),
       decoration: BoxDecoration(
-        color: Colors.blue, // Hintergrundfarbe des Containers
-        borderRadius: BorderRadius.circular(10.0), // Abrundung der Ecken des Containers
+        color: Colors.blue,
+        borderRadius: BorderRadius.circular(10.0),
         boxShadow: [
           BoxShadow(
-            color: Colors.grey.withOpacity(0.5), // Schattenfarbe und Opazität
+            color: Colors.grey.withOpacity(0.5),
             spreadRadius: 5,
             blurRadius: 7,
-            offset: const Offset(0, 3), // Schattenrichtung
+            offset: const Offset(0, 3),
           ),
         ],
       ),
-      child: const Text(
-        'Hello World!',
-        style: TextStyle(
-          fontSize: 24.0, // Schriftgröße des Textes
-          color: Colors.white, // Textfarbe
-          fontWeight: FontWeight.bold, // Textgewicht
-        ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const Text(
+            'Hello World!',
+            style: TextStyle(
+              fontSize: 24.0,
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          const SizedBox(height: 16.0), // Abstand zwischen Text und ElevatedButton
+          ElevatedButton(
+            onPressed: () {
+              // Aktion, die beim Drücken des Buttons ausgeführt wird
+            },
+            style: ElevatedButton.styleFrom(
+              foregroundColor: Colors.white, backgroundColor: Colors.orange, // Textfarbe des Buttons
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(8.0), // Abrundung der Button-Ecken
+              ),
+            ),
+            child: const Text('Klick mich'),
+          ),
+        ],
       ),
     );
   }

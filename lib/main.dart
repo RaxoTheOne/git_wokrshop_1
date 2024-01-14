@@ -52,10 +52,12 @@ class CustomContainer extends StatelessWidget {
           const SizedBox(height: 16.0),
           ElevatedButton(
             onPressed: () {
-              _showDialog(context); // Aufruf der Funktion zur Anzeige des Dialogs
+              _showDialog(
+                  context); // Aufruf der Funktion zur Anzeige des Dialogs
             },
             style: ElevatedButton.styleFrom(
-              foregroundColor: Colors.white, backgroundColor: Colors.orange,
+              foregroundColor: Colors.white,
+              backgroundColor: Colors.orange,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(8.0),
               ),

@@ -49,21 +49,42 @@ class CustomContainer extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
           ),
-          const SizedBox(height: 16.0), // Abstand zwischen Text und ElevatedButton
+          const SizedBox(height: 16.0),
           ElevatedButton(
             onPressed: () {
-              // Aktion, die beim Drücken des Buttons ausgeführt wird
+              _showDialog(context); // Aufruf der Funktion zur Anzeige des Dialogs
             },
             style: ElevatedButton.styleFrom(
-              foregroundColor: Colors.white, backgroundColor: Colors.orange, // Textfarbe des Buttons
+              foregroundColor: Colors.white, backgroundColor: Colors.orange,
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(8.0), // Abrundung der Button-Ecken
+                borderRadius: BorderRadius.circular(8.0),
               ),
             ),
             child: const Text('Klick mich'),
           ),
         ],
       ),
+    );
+  }
+
+  // Funktion zur Anzeige des Dialogs
+  Future<void> _showDialog(BuildContext context) async {
+    return showDialog<void>(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('Dialogtitel'),
+          content: const Text('Du bist einfach geil!!!'),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop(); // Schließt den Dialog
+              },
+              child: const Text('OK'),
+            ),
+          ],
+        );
+      },
     );
   }
 }
